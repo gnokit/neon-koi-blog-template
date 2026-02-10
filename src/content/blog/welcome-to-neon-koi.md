@@ -2,8 +2,8 @@
 title: "Welcome to Neon Koi"
 description: "An introduction to the Neon Koi blog template and its features"
 pubDate: 2025-02-10
-thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Welcome+to+Neon+Koi
-heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Welcome+to+Neon+Koi
+thumbnail: /images/hero-image-v1.png
+heroImage: /images/hero-image-v1.png
 author: Neon Koi Team
 tags: ["introduction", "getting-started"]
 draft: false
