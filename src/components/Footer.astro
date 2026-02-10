@@ -2,10 +2,15 @@
 import ThemeToggle from './ThemeToggle.astro';
 import { siteConfig } from '../config/site';
 
+// Handle base URL for GitHub Pages
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
 // Build footer links array
-const footerLinks = [
-  ...siteConfig.navigation.footer.map(link => ({ ...link, external: link.external ?? false })),
-];
+const footerLinks = siteConfig.navigation.footer.map(link => ({
+  ...link,
+  external: link.external ?? false,
+  href: link.external ? link.href : `${baseUrl}${link.href.startsWith('/') ? link.href.slice(1) : link.href}`
+}));
 
 // Add social links if enabled
 if (siteConfig.showSocialInFooter) {
