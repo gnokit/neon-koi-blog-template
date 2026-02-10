@@ -48,8 +48,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <script is:inline>
     (function() {
       const theme = localStorage.getItem('theme') || 'light';
+      const html = document.documentElement;
       if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
       }
     })();
   </script>

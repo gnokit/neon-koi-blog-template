@@ -12,17 +12,34 @@
   </select>
 </div>
 
-<script>
-  import { getTheme, setTheme } from '../utils/theme';
+<script type="module">
+  const select = document.getElementById('theme-select');
 
-  const select = document.getElementById('theme-select') as HTMLSelectElement;
+  function getTheme() {
+    if (typeof window === 'undefined') return 'light';
+    return localStorage.getItem('theme') || 'light';
+  }
+
+  function setTheme(theme) {
+    if (typeof window === 'undefined') return;
+
+    localStorage.setItem('theme', theme);
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
 
   // Set initial value
-  select.value = getTheme();
+  if (select) {
+    select.value = getTheme();
 
-  // Handle change
-  select.addEventListener('change', (e) => {
-    const theme = (e.target as HTMLSelectElement).value as 'light' | 'dark';
-    setTheme(theme);
-  });
+    // Handle change
+    select.addEventListener('change', (e) => {
+      const theme = e.target.value;
+      setTheme(theme);
+    });
+  }
 </script>
