@@ -71,7 +71,7 @@ export const siteConfig: SiteConfig = {
   tagline: 'Celebrating the makers, creators, and coders who shine.',
 
   // URLs
-  url: 'https://neonkoi.example.com',
+  url: 'https://gnokit.github.io/neon-koi-blog-template',
 
   // Author/Publisher
   author: 'Neon Koi Team',

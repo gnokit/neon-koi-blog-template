@@ -6,7 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://koiblog.dev',
+  site: 'https://gnokit.github.io',
+  base: '/neon-koi-blog-template',
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()]
