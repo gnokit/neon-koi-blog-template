@@ -1,14 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturedPost from '../components/FeaturedPost.astro';
+import PostGrid from '../components/PostGrid.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredPost = sortedPosts.find(post => post.data.featured) || sortedPosts[0];
+const recentPosts = sortedPosts.filter(post => post !== featuredPost).slice(0, 6);
 ---
 
-<BaseLayout title="Koi - Celebrating the makers, creators, and coders who shine.">
-	<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-		<h1 class="text-4xl font-bold text-center mb-8">
-			Welcome to Koi
-		</h1>
-		<p class="text-center text-lg text-neutral-600 dark:text-neutral-400">
-			A blog celebrating the makers, creators, and coders who shine.
-		</p>
-	</main>
+<BaseLayout title="GlitchBlog - Celebrating the makers, creators, and coders who shine.">
+  <!-- Hero Section with Featured Post -->
+  {featuredPost && (
+    <section class="mb-12">
+      <FeaturedPost post={featuredPost} />
+    </section>
+  )}
+
+  <!-- Recent Posts Grid -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {recentPosts.length > 0 ? (
+      <div>
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8">
+          Recent Posts
+        </h2>
+        <PostGrid posts={recentPosts} />
+      </div>
+    ) : (
+      <div class="text-center py-16">
+        <div class="mb-8">
+          <svg class="w-24 h-24 mx-auto" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="50" rx="45" ry="30" fill="url(#fishBodyHero)" opacity="0.9"/>
+            <path d="M15 50 L5 35 L5 65 Z" fill="url(#fishTailHero)" opacity="0.9"/>
+            <circle cx="90" cy="45" r="6" fill="white"/>
+            <circle cx="92" cy="45" r="3" fill="#1a1a1a"/>
+            <ellipse cx="55" cy="35" rx="15" ry="8" fill="url(#fishFinHero)" opacity="0.7"/>
+            <defs>
+              <linearGradient id="fishBodyHero" x1="15" y1="20" x2="105" y2="80" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#f472b6"/>
+                <stop offset="0.5" stop-color="#c084fc"/>
+                <stop offset="1" stop-color="#60a5fa"/>
+              </linearGradient>
+              <linearGradient id="fishTailHero" x1="5" y1="35" x2="15" y2="65" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#f472b6"/>
+                <stop offset="1" stop-color="#c084fc"/>
+              </linearGradient>
+              <linearGradient id="fishFinHero" x1="40" y1="27" x2="70" y2="43" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#c084fc"/>
+                <stop offset="1" stop-color="#60a5fa"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+          Welcome to GlitchBlog
+        </h1>
+        <p class="text-center text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+          A blog celebrating the makers, creators, and coders who shine.
+          <br />
+          <span class="text-sm mt-4 block">Add some blog posts to see them here!</span>
+        </p>
+      </div>
+    )}
+  </main>
 </BaseLayout>

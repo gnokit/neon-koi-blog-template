@@ -16,25 +16,53 @@ const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
 });
 ---
 
-<a
-  href={`/blog/${post.slug}/`}
-  class="group block relative rounded-lg overflow-hidden"
->
-  <div class="aspect-[21/9] overflow-hidden">
-    <img
-      src={heroImage}
-      alt={title}
-      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-  </div>
+<div class="hero-gradient rounded-2xl overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <!-- Fish Illustration -->
+      <div class="flex-shrink-0">
+        <svg class="w-32 h-32 md:w-48 md:h-48" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Stylized fish body -->
+          <ellipse cx="60" cy="50" rx="45" ry="30" fill="url(#fishBody)" opacity="0.9"/>
+          <!-- Fish tail -->
+          <path d="M15 50 L5 35 L5 65 Z" fill="url(#fishTail)" opacity="0.9"/>
+          <!-- Fish eye -->
+          <circle cx="90" cy="45" r="6" fill="white"/>
+          <circle cx="92" cy="45" r="3" fill="#1a1a1a"/>
+          <!-- Fish fin -->
+          <ellipse cx="55" cy="35" rx="15" ry="8" fill="url(#fishFin)" opacity="0.7"/>
+          <defs>
+            <linearGradient id="fishBody" x1="15" y1="20" x2="105" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f472b6"/>
+              <stop offset="0.5" stop-color="#c084fc"/>
+              <stop offset="1" stop-color="#60a5fa"/>
+            </linearGradient>
+            <linearGradient id="fishTail" x1="5" y1="35" x2="15" y2="65" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f472b6"/>
+              <stop offset="1" stop-color="#c084fc"/>
+            </linearGradient>
+            <linearGradient id="fishFin" x1="40" y1="27" x2="70" y2="43" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#c084fc"/>
+              <stop offset="1" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-    <time class="text-sm text-white/80 block mb-2">
-      {formattedDate}
-    </time>
-    <h2 class="text-2xl md:text-3xl font-bold text-white line-clamp-2">
-      {title}
-    </h2>
+      <!-- Content -->
+      <div class="flex-1 text-center md:text-left">
+        <a
+          href={`/blog/${post.slug}/`}
+          class="group block"
+        >
+          <time class="text-sm text-white/80 block mb-3">
+            {formattedDate}
+          </time>
+          <h2 class="text-2xl md:text-4xl font-bold text-white line-clamp-3 group-hover:text-white/90 transition-colors">
+            {title}
+          </h2>
+        </a>
+      </div>
+    </div>
   </div>
-</a>
+</div>

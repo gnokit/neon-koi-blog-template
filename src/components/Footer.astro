@@ -11,20 +11,20 @@ const footerLinks = [
 ];
 ---
 
-<footer class="border-t border-neutral-200 dark:border-neutral-800 mt-auto">
+<footer class="border-t border-neutral-200 dark:border-neutral-800 mt-auto bg-neutral-50 dark:bg-neutral-900/50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
+    <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-6">
       Celebrating the makers, creators, and coders who shine.
     </p>
 
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <nav class="flex flex-wrap gap-x-4 gap-y-2">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <nav class="flex flex-wrap gap-x-6 gap-y-2">
         {footerLinks.map(link => (
           <a
             href={link.href}
             target={link.external ? '_blank' : undefined}
             rel={link.external ? 'noopener noreferrer' : undefined}
-            class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
           >
             {link.label}
           </a>
@@ -35,12 +35,24 @@ const footerLinks = [
         <ThemeToggle />
 
         <!-- Koi Fish Logo -->
-        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="6" fill="#6d28d9"/>
-          <path d="M8 12c0-1.1.9-2 2-2h4v4h-4c-1.1 0-2-.9-2-2z" fill="white"/>
-          <path d="M8 20c0-1.1.9-2 2-2h4v4h-4c-1.1 0-2-.9-2-2z" fill="white"/>
-          <path d="M16 8h4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-4V8z" fill="white" opacity="0.7"/>
-          <circle cx="22" cy="12" r="2" fill="white"/>
+        <svg class="w-8 h-8" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 16c0-3 2-5 5-5h6v10H9c-3 0-5-2-5-5z" fill="url(#pinkGradientFooter)"/>
+          <path d="M14 8c0-3 2-5 5-5h6v20h-6c-3 0-5-2-5-5V8z" fill="url(#purpleGradientFooter)"/>
+          <path d="M24 12c0-3 2-5 5-5h6v10h-6c-3 0-5-2-5-5z" fill="url(#blueGradientFooter)"/>
+          <defs>
+            <linearGradient id="pinkGradientFooter" x1="4" y1="11" x2="15" y2="21" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f472b6"/>
+              <stop offset="1" stop-color="#ec4899"/>
+            </linearGradient>
+            <linearGradient id="purpleGradientFooter" x1="14" y1="3" x2="25" y2="23" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#c084fc"/>
+              <stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+            <linearGradient id="blueGradientFooter" x1="24" y1="7" x2="35" y2="17" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#60a5fa"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
     </div>
