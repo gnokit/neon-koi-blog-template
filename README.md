@@ -7,6 +7,7 @@ A blog site celebrating the makers, creators, and coders who shine. Built with A
 - Static site generation with Astro
 - Light/dark theme toggle
 - Content collections for type-safe blog posts
+- Centralized TypeScript configuration
 - MDX support for rich content
 - RSS feed generation
 - SEO-friendly with sitemap
@@ -32,6 +33,7 @@ npm run preview
 ```
 src/
 ├── components/      # Reusable UI components
+├── config/          # Site configuration
 ├── content/         # Content collections
 │   └── blog/        # Blog posts (Markdown/MDX)
 ├── layouts/         # Page layouts

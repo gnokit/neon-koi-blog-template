@@ -5,7 +5,7 @@ pubDate: 2024-11-15
 updatedDate: 2024-11-18
 thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Fall+2024+Part+2
 heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Fall+2024+Part+2
-author: Glitch Team
+author: Neon Koi Team
 tags: [roundup, fall-2024, community]
 draft: false
 ---

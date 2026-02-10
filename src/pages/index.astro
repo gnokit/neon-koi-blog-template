@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedPost from '../components/FeaturedPost.astro';
 import PostGrid from '../components/PostGrid.astro';
 import { getCollection } from 'astro:content';
+import { siteConfig } from '../config/site';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -10,7 +11,7 @@ const featuredPost = sortedPosts.find(post => post.data.featured) || sortedPosts
 const recentPosts = sortedPosts.filter(post => post !== featuredPost).slice(0, 6);
 ---
 
-<BaseLayout title="GlitchBlog - Celebrating the makers, creators, and coders who shine.">
+<BaseLayout title={`${siteConfig.name} - ${siteConfig.tagline}`}>
   <!-- Hero Section with Featured Post -->
   {featuredPost && (
     <section class="mb-12 px-4 sm:px-6 lg:px-8">
@@ -54,10 +55,10 @@ const recentPosts = sortedPosts.filter(post => post !== featuredPost).slice(0, 6
           </svg>
         </div>
         <h1 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-          Welcome to GlitchBlog
+          Welcome to {siteConfig.name}
         </h1>
         <p class="text-center text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          A blog celebrating the makers, creators, and coders who shine.
+          {siteConfig.tagline}
           <br />
           <span class="text-sm mt-4 block">Add some blog posts to see them here!</span>
         </p>

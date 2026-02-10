@@ -4,7 +4,7 @@ description: A casual winter update with miscellaneous improvements, community s
 pubDate: 2025-01-05
 thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Winter+2025
 heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Winter+2025
-author: Glitch Team
+author: Neon Koi Team
 tags: [winter-2025, updates, community, preview]
 draft: false
 ---

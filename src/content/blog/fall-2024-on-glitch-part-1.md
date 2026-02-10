@@ -4,7 +4,7 @@ description: A roundup of the amazing projects, community highlights, and platfo
 pubDate: 2024-10-28
 thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Fall+2024+Part+1
 heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Fall+2024+Part+1
-author: Glitch Team
+author: Neon Koi Team
 tags: [roundup, fall-2024, community]
 draft: false
 ---

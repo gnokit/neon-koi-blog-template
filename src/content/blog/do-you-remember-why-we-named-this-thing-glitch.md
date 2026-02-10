@@ -4,7 +4,7 @@ description: The origin story behind the Glitch name and how it reflects our phi
 pubDate: 2024-11-10
 thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Why+Glitch%3F
 heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Why+Glitch%3F
-author: Glitch Team
+author: Neon Koi Team
 tags: [history, origin-story, behind-the-scenes]
 draft: false
 ---

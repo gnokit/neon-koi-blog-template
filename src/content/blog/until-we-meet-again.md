@@ -4,7 +4,7 @@ description: A reflection on our journey together and what's next for the Glitch
 pubDate: 2024-12-20
 thumbnail: https://placehold.co/640x360/8b5cf6/ffffff?text=Until+We+Meet+Again
 heroImage: https://placehold.co/1200x600/7c3aed/ffffff?text=Until+We+Meet+Again
-author: Glitch Team
+author: Neon Koi Team
 tags: [reflection, community, goodbye]
 draft: false
 ---

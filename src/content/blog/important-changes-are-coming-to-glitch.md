@@ -4,7 +4,7 @@ description: We're making some big changes to the Glitch platform. Here's what y
 pubDate: 2025-01-15
 thumbnail: https://placehold.co/640x360/5B4EE6/ffffff?text=Important+Changes
 heroImage: https://placehold.co/1200x600/5B4EE6/ffffff?text=Important+Changes
-author: Glitch Team
+author: Neon Koi Team
 tags: [announcements, platform, updates]
 draft: false
 featured: true

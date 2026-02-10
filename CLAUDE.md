@@ -85,3 +85,50 @@ Tailwind v4 configuration is in `src/styles/global.css` using the `@theme` direc
 - `src/content/config.ts`: Content collection schemas
 - `src/styles/global.css`: Tailwind v4 theme and global styles
 - `src/utils/theme.ts`: Theme management utilities
+- `src/config/site.ts`: Site-wide configuration with TypeScript interfaces
+
+### Site Configuration
+
+The template uses a centralized, typed configuration system in `src/config/site.ts`:
+
+```typescript
+// Core interfaces for customization
+interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;  // Opens in new tab
+}
+
+interface SocialLinks {
+  twitter?: string;
+  mastodon?: string;
+  github?: string;
+  [key: string]: string | undefined;
+}
+
+interface HeaderAction {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface SiteConfig {
+  name: string;
+  tagline: string;
+  url: string;
+  author: string;
+  social: SocialLinks;
+  showSocialInFooter: boolean;
+  headerAction: HeaderAction | null;
+  navigation: {
+    main: NavItem[];
+    footer: NavItem[];
+  };
+}
+```
+
+Key features:
+- **Type-safe configuration**: All settings are typed with TypeScript interfaces
+- **External links**: Add `external: true` to any navigation item to open in a new tab
+- **Header action**: Configurable button on the right side of the header (set to `null` to hide)
+- **Social links toggle**: Control whether social icons appear in the footer via `showSocialInFooter`
