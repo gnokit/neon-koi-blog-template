@@ -14,8 +14,8 @@
   --color-glitch-blue: #60a5fa;
 
   /* Background colors */
-  --color-bg-light: #ffffff;
-  --color-bg-dark: #0f0f0f;
+  --color-bg-light: #faf8f5;
+  --color-bg-dark: #1a1814;
   --color-surface-light: #f5f5f5;
   --color-surface-dark: #1a1a1a;
 
@@ -175,9 +175,16 @@ html.dark body {
 }
 
 /* List styling */
-.prose ul, .prose ol {
+.prose ul {
   margin: 1.5rem 0;
   padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
 }
 
 .prose li {

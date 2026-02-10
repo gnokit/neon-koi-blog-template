@@ -58,7 +58,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     })();
   </script>
 </head>
-<body class="min-h-screen bg-white dark:bg-[#0f0f0f] text-neutral-900 dark:text-neutral-100 transition-colors duration-300 flex flex-col">
+<body class="min-h-screen text-neutral-900 dark:text-neutral-100 transition-colors duration-300 flex flex-col">
   {showHeader && <Header />}
   <main class="flex-1">
     <slot />
