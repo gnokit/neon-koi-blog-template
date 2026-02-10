@@ -65,7 +65,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   let posts: SearchPost[] = [];
 
   // Get base URL for GitHub Pages from the data attribute
-  const baseUrl = document.getElementById('base-url-data')?.dataset.baseUrl || '/';
+  const rawBaseUrl = document.getElementById('base-url-data')?.dataset.baseUrl || '/';
+  const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const searchResults = document.getElementById('search-results') as HTMLDivElement;
