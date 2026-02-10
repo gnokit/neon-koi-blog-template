@@ -105,8 +105,8 @@ Based on the screenshots in `/references/`:
 ## Phase 3: Content Collections
 
 ### Task 3.1: Content Schema
-- [ ] Create `src/content/config.ts`
-  - [ ] Define `blog` collection schema:
+- [x] Create `src/content/config.ts`
+  - [x] Define `blog` collection schema:
     ```typescript
     {
       title: z.string(),
@@ -123,14 +123,14 @@ Based on the screenshots in `/references/`:
     ```
 
 ### Task 3.2: Sample Content
-- [ ] Create sample blog posts in `src/content/blog/`:
-  - [ ] "Important Changes are Coming to Glitch"
-  - [ ] "Until we meet again"
-  - [ ] "Do you remember why we named this thing Glitch?"
-  - [ ] "Fall 2024 on Glitch, Part 1"
-  - [ ] "Fall 2024 on Glitch, Part 2"
-  - [ ] "Winter 2025 on Glitch: Little of this, little of that"
-- [ ] Add placeholder images for posts
+- [x] Create sample blog posts in `src/content/blog/`:
+  - [x] "Important Changes are Coming to Glitch"
+  - [x] "Until we meet again"
+  - [x] "Do you remember why we named this thing Glitch?"
+  - [x] "Fall 2024 on Glitch, Part 1"
+  - [x] "Fall 2024 on Glitch, Part 2"
+  - [x] "Winter 2025 on Glitch: Little of this, little of that"
+- [x] Add placeholder images for posts
 
 ---
 

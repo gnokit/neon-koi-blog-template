@@ -4,13 +4,13 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Glitch Blog Colors */
-  --color-primary: #8b5cf6;
-  --color-primary-dark: #7c3aed;
+  /* Glitch Blog Colors - Updated to match Glitch design */
+  --color-primary: #5B4EE6;
+  --color-primary-dark: #4a3fd1;
 
   /* Glitch gradient colors */
-  --color-glitch-pink: #f5a9b8;
-  --color-glitch-purple: #c084fc;
+  --color-glitch-pink: #E83E8C;
+  --color-glitch-purple: #5B4EE6;
   --color-glitch-blue: #60a5fa;
 
   /* Background colors */
@@ -20,14 +20,14 @@
   --color-surface-dark: #1a1a1a;
 
   /* Text colors */
-  --color-text-light: #171717;
+  --color-text-light: #333333;
   --color-text-dark: #e5e5e5;
   --color-text-muted-light: #737373;
   --color-text-muted-dark: #a3a3a3;
 
   /* Accent colors from Glitch design */
-  --color-accent-purple: #8b5cf6;
-  --color-accent-pink: #ec4899;
+  --color-accent-purple: #5B4EE6;
+  --color-accent-pink: #E83E8C;
   --color-accent-blue: #3b82f6;
 
   /* Card/Post backgrounds */
@@ -69,25 +69,124 @@ html.dark body {
   background: linear-gradient(135deg, #f5a9b8 0%, #c084fc 50%, #60a5fa 100%);
 }
 
-/* Typography for blog content */
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.prose p {
-  line-height: 1.75;
+/* Typography for blog content - Glitch style */
+.prose h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-glitch-purple);
   margin-bottom: 1.5rem;
 }
 
+.prose h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-glitch-purple);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3, .prose h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-glitch-purple);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.dark .prose p {
+  color: var(--color-text-dark);
+}
+
 .prose a {
-  color: var(--color-accent-purple);
+  color: var(--color-glitch-pink);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
 }
 
 .prose a:hover {
-  color: var(--color-accent-pink);
+  color: var(--color-glitch-pink);
+  text-decoration-thickness: 2px;
+}
+
+/* Table styling for prose content */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.prose thead {
+  border-bottom: 2px solid var(--color-glitch-purple);
+}
+
+.prose th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--color-glitch-purple);
+  background-color: var(--color-surface-light);
+}
+
+.dark .prose th {
+  background-color: var(--color-surface-dark);
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  color: var(--color-text-light);
+}
+
+.dark .prose td {
+  border-bottom-color: #333333;
+  color: var(--color-text-dark);
+}
+
+.prose tr:hover td {
+  background-color: var(--color-surface-light);
+}
+
+.dark .prose tr:hover td {
+  background-color: var(--color-surface-dark);
+}
+
+/* Blockquote styling */
+.prose blockquote {
+  border-left: 4px solid var(--color-glitch-purple);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-text-muted-light);
+}
+
+.dark .prose blockquote {
+  color: var(--color-text-muted-dark);
+}
+
+/* List styling */
+.prose ul, .prose ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.dark .prose li {
+  color: var(--color-text-dark);
 }
 
 /* Glitch fish logo gradient */

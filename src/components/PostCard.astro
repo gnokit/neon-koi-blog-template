@@ -18,19 +18,21 @@ const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
 
 <a
   href={`/blog/${post.slug}/`}
-  class="group block card-hover"
+  class="group block card-hover bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
 >
-  <div class="aspect-[16/9] overflow-hidden rounded-lg mb-4">
+  <div class="aspect-[16/9] overflow-hidden">
     <img
       src={thumbnail}
       alt={title}
       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
     />
   </div>
-  <time class="text-xs text-neutral-500 dark:text-neutral-500 block mb-2">
-    {formattedDate}
-  </time>
-  <h3 class="text-lg font-semibold text-neutral-900 dark:text-white line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-    {title}
-  </h3>
+  <div class="p-5">
+    <time class="text-sm text-neutral-500 dark:text-neutral-400 block mb-2">
+      {formattedDate}
+    </time>
+    <h3 class="text-lg font-semibold text-neutral-900 dark:text-white line-clamp-2 group-hover:text-[#5B4EE6] dark:group-hover:text-[#7B6EF6] transition-colors">
+      {title}
+    </h3>
+  </div>
 </a>
