@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable dark mode with class strategy */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Custom colors for Koi blog */
   --color-primary: #6d28d9;
@@ -34,7 +37,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark mode transitions */
+/* Light mode (default) */
+html body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+/* Dark mode */
 html.dark body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
