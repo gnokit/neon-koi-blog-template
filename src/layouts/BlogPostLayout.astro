@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author } = post.data;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
+        {title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+        <span>By {author}</span>
+        <span>•</span>
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        {updatedDate && (
+          <>
+            <span>•</span>
+            <span>Updated: {new Date(updatedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    {heroImage && (
+      <div class="mb-8 rounded-lg overflow-hidden">
+        <img src={heroImage} alt={title} class="w-full h-auto object-cover" />
+      </div>
+    )}
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

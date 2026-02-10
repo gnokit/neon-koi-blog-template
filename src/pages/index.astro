@@ -1,11 +1,14 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Koi - Celebrating the makers, creators, and coders who shine.">
+	<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<h1 class="text-4xl font-bold text-center mb-8">
+			Welcome to Koi
+		</h1>
+		<p class="text-center text-lg text-neutral-600 dark:text-neutral-400">
+			A blog celebrating the makers, creators, and coders who shine.
+		</p>
+	</main>
+</BaseLayout>
