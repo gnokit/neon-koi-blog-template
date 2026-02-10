@@ -1,12 +1,8 @@
 ---
-const navItems = [
-  { label: 'Glitch Updates', href: '/category/glitch-updates' },
-  { label: 'Tips & Tutorials', href: '/category/tips-tutorials' },
-  { label: 'Apps We Love', href: '/category/apps-we-love' },
-  { label: 'Creator Interviews', href: '/category/creator-interviews' },
-  { label: 'Industry News', href: '/category/industry-news' },
-  { label: 'Internet Culture', href: '/category/internet-culture' },
-];
+import { siteConfig } from '../config/site';
+
+const navItems = siteConfig.navigation.main;
+const headerAction = siteConfig.headerAction;
 ---
 
 <header class="border-b border-neutral-200 dark:border-neutral-800">
@@ -37,7 +33,7 @@ const navItems = [
             </linearGradient>
           </defs>
         </svg>
-        <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">GlitchBlog</span>
+        <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">{siteConfig.name}</span>
       </a>
 
       <!-- Navigation -->
@@ -45,6 +41,8 @@ const navItems = [
         {navItems.map(item => (
           <a
             href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             {item.label}
@@ -54,14 +52,16 @@ const navItems = [
 
       <!-- Right side actions -->
       <div class="flex items-center gap-4">
-        <a
-          href="https://glitch.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors hidden sm:block"
-        >
-          Glitch.com
-        </a>
+        {headerAction && (
+          <a
+            href={headerAction.href}
+            target={headerAction.external ? '_blank' : undefined}
+            rel={headerAction.external ? 'noopener noreferrer' : undefined}
+            class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors hidden sm:block"
+          >
+            {headerAction.label}
+          </a>
+        )}
         <button
           class="p-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           aria-label="Search"

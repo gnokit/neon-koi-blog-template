@@ -1,20 +1,43 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import { siteConfig } from '../config/site';
 
+// Build footer links array
 const footerLinks = [
-  { label: 'Search', href: '/search' },
-  { label: 'Glitch.com', href: 'https://glitch.com', external: true },
-  { label: 'About Glitch', href: '/about' },
-  { label: 'RSS', href: '/rss.xml' },
-  { label: 'Glitch on Twitter', href: 'https://twitter.com/glitch', external: true },
-  { label: 'Glitch on Mastodon', href: 'https://mastodon.social/@glitch', external: true },
+  ...siteConfig.navigation.footer.map(link => ({ ...link, external: link.external ?? false })),
 ];
+
+// Add social links if enabled
+if (siteConfig.showSocialInFooter) {
+  if (siteConfig.social.twitter) {
+    footerLinks.push({
+      label: `${siteConfig.name} on Twitter`,
+      href: siteConfig.social.twitter,
+      external: true,
+    });
+  }
+  if (siteConfig.social.mastodon) {
+    footerLinks.push({
+      label: `${siteConfig.name} on Mastodon`,
+      href: siteConfig.social.mastodon,
+      external: true,
+    });
+  }
+  // Add GitHub if present
+  if (siteConfig.social.github) {
+    footerLinks.push({
+      label: `${siteConfig.name} on GitHub`,
+      href: siteConfig.social.github,
+      external: true,
+    });
+  }
+}
 ---
 
 <footer class="border-t border-neutral-200 dark:border-neutral-800 mt-auto bg-neutral-50 dark:bg-neutral-900/50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-6">
-      Celebrating the makers, creators, and coders who shine.
+      {siteConfig.tagline}
     </p>
 
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
