@@ -30,6 +30,9 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Convert PNG images to WebP for faster loading
+npm run to-webp
 ```
 
 ## Project Structure

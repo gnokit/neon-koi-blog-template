@@ -2,8 +2,8 @@
 title: "Welcome to Neon Koi"
 description: "An introduction to the Neon Koi blog template and its features"
 pubDate: 2025-02-10
-thumbnail: /images/hero-image-v1.png
-heroImage: /images/hero-image-v1.png
+thumbnail: /images/hero-image-v1.webp
+heroImage: /images/hero-image-v1.webp
 author: Neon Koi Team
 tags: ["introduction", "getting-started"]
 draft: false

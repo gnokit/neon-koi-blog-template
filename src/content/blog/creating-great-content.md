@@ -2,8 +2,8 @@
 title: "Creating Great Content with Neon Koi"
 description: "Learn how to write beautiful blog posts with Markdown formatting"
 pubDate: 2025-02-08
-thumbnail: /images/creating-content-blog.png
-heroImage: /images/creating-content-blog.png
+thumbnail: /images/creating-content-blog.webp
+heroImage: /images/creating-content-blog.webp
 author: Neon Koi Team
 tags: ["tutorial", "writing", "markdown"]
 draft: false

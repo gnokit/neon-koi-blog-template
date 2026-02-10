@@ -2,8 +2,8 @@
 title: "Customizing Your Neon Koi Blog"
 description: "A step-by-step guide to personalizing your Neon Koi template"
 pubDate: 2025-02-09
-thumbnail: /images/custom-neon-koi-blog.png
-heroImage: /images/custom-neon-koi-blog.png
+thumbnail: /images/custom-neon-koi-blog.webp
+heroImage: /images/custom-neon-koi-blog.webp
 author: Neon Koi Team
 tags: ["tutorial", "customization", "configuration"]
 draft: false
