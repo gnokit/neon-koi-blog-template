@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, pubDate, thumbnail } = post.data;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a
+  href={`/blog/${post.slug}/`}
+  class="group block bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+>
+  <div class="aspect-[16/9] overflow-hidden">
+    <img
+      src={thumbnail}
+      alt={title}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+  <div class="p-4">
+    <time class="text-xs text-neutral-500 dark:text-neutral-500 block mb-2">
+      {formattedDate}
+    </time>
+    <h3 class="text-lg font-semibold text-neutral-900 dark:text-white line-clamp-2">
+      {title}
+    </h3>
+  </div>
+</a>

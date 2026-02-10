@@ -1,0 +1,28 @@
+---
+---
+
+<div class="flex items-center gap-2">
+  <label for="theme-select" class="text-sm text-neutral-600 dark:text-neutral-400">Choose a theme:</label>
+  <select
+    id="theme-select"
+    class="px-3 py-1.5 text-sm bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+  >
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+</div>
+
+<script>
+  import { getTheme, setTheme } from '../utils/theme';
+
+  const select = document.getElementById('theme-select') as HTMLSelectElement;
+
+  // Set initial value
+  select.value = getTheme();
+
+  // Handle change
+  select.addEventListener('change', (e) => {
+    const theme = (e.target as HTMLSelectElement).value as 'light' | 'dark';
+    setTheme(theme);
+  });
+</script>

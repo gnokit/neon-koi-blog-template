@@ -1,13 +1,17 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
   description?: string;
   image?: string;
+  showHeader?: boolean;
+  showFooter?: boolean;
 }
 
-const { title, description = 'A blog celebrating the makers, creators, and coders who shine.', image = '/og-image.png' } = Astro.props;
+const { title, description = 'A blog celebrating the makers, creators, and coders who shine.', image = '/og-image.png', showHeader = true, showFooter = true } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -50,7 +54,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     })();
   </script>
 </head>
-<body class="min-h-screen bg-white dark:bg-[#0f0f0f] text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
-  <slot />
+<body class="min-h-screen bg-white dark:bg-[#0f0f0f] text-neutral-900 dark:text-neutral-100 transition-colors duration-300 flex flex-col">
+  {showHeader && <Header />}
+  <main class="flex-1">
+    <slot />
+  </main>
+  {showFooter && <Footer />}
 </body>
 </html>

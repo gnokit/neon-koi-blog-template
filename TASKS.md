@@ -51,53 +51,54 @@ Based on the screenshots in `/references/`:
 ## Phase 2: Core Components
 
 ### Task 2.1: Layout Components
-- [ ] Create `src/layouts/BaseLayout.astro`
-  - [ ] HTML5 boilerplate with meta tags
-  - [ ] Theme initialization script (prevents flash)
-  - [ ] Slot for page content
-- [ ] Create `src/layouts/BlogPostLayout.astro`
-  - [ ] Extends BaseLayout
-  - [ ] Article header with title, author, date
-  - [ ] Hero image support
+- [x] Create `src/layouts/BaseLayout.astro`
+  - [x] HTML5 boilerplate with meta tags
+  - [x] Theme initialization script (prevents flash)
+  - [x] Slot for page content
+  - [x] Header and Footer integration with show/hide props
+- [x] Create `src/layouts/BlogPostLayout.astro`
+  - [x] Extends BaseLayout
+  - [x] Article header with title, author, date
+  - [x] Hero image support
 
 ### Task 2.2: Navigation Components
-- [ ] Create `src/components/Header.astro`
-  - [ ] Logo "Koi" with link to home
-  - [ ] Navigation menu items:
-    - [ ] Glitch Updates
-    - [ ] Tips & Tutorials
-    - [ ] Apps We Love
-    - [ ] Creator Interviews
-    - [ ] Industry News
-    - [ ] Internet Culture
-  - [ ] Search button
-  - [ ] Glitch.com link
-- [ ] Create `src/components/Footer.astro`
-  - [ ] Tagline: "Celebrating the makers, creators, and coders who shine."
-  - [ ] Footer links: Search, Glitch.com, About Glitch, RSS, Twitter, Mastodon
-  - [ ] Theme selector dropdown (Light/Dark)
-  - [ ] Koi fish logo
+- [x] Create `src/components/Header.astro`
+  - [x] Logo "Koi" with link to home
+  - [x] Navigation menu items:
+    - [x] Glitch Updates
+    - [x] Tips & Tutorials
+    - [x] Apps We Love
+    - [x] Creator Interviews
+    - [x] Industry News
+    - [x] Internet Culture
+  - [x] Search button
+  - [x] Glitch.com link
+- [x] Create `src/components/Footer.astro`
+  - [x] Tagline: "Celebrating the makers, creators, and coders who shine."
+  - [x] Footer links: Search, Glitch.com, About Glitch, RSS, Twitter, Mastodon
+  - [x] Theme selector dropdown (Light/Dark)
+  - [x] Koi fish logo
 
 ### Task 2.3: Theme Toggle
-- [ ] Create `src/components/ThemeToggle.astro`
-  - [ ] Dropdown select for Light/Dark modes
-  - [ ] Store preference in localStorage
-  - [ ] Sync with `document.documentElement.classList`
-- [ ] Create `src/utils/theme.ts` for theme utilities
+- [x] Create `src/components/ThemeToggle.astro`
+  - [x] Dropdown select for Light/Dark modes
+  - [x] Store preference in localStorage
+  - [x] Sync with `document.documentElement.classList`
+- [x] Create `src/utils/theme.ts` for theme utilities
 
 ### Task 2.4: Blog Components
-- [ ] Create `src/components/PostCard.astro`
-  - [ ] Thumbnail image
-  - [ ] Date
-  - [ ] Title
-  - [ ] Link to full post
-- [ ] Create `src/components/PostGrid.astro`
-  - [ ] Grid layout for post cards
-  - [ ] Responsive columns (1 on mobile, 2 on tablet, 3 on desktop)
-- [ ] Create `src/components/FeaturedPost.astro`
-  - [ ] Large hero section for featured article
-  - [ ] Full-width image
-  - [ ] Date and title
+- [x] Create `src/components/PostCard.astro`
+  - [x] Thumbnail image
+  - [x] Date
+  - [x] Title
+  - [x] Link to full post
+- [x] Create `src/components/PostGrid.astro`
+  - [x] Grid layout for post cards
+  - [x] Responsive columns (1 on mobile, 2 on tablet, 3 on desktop)
+- [x] Create `src/components/FeaturedPost.astro`
+  - [x] Large hero section for featured article
+  - [x] Full-width image
+  - [x] Date and title
 
 ---
 
