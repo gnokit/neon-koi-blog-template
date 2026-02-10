@@ -197,6 +197,36 @@ html.dark body {
   background-clip: text;
 }
 
+/* Inline code styling (not inside pre blocks) */
+.prose :not(pre) > code {
+  background-color: var(--color-surface-light);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+  color: var(--color-text-light);
+}
+
+.dark .prose :not(pre) > code {
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-dark);
+}
+
+/* Code block styling */
+.prose pre {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e5e5e5;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+}
+
 /* Card hover effects */
 .card-hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
