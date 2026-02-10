@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const allPosts = await getCollection('blog');
+const tutorialPosts = allPosts.filter(post =>
+  post.data.tags.some(tag => ['tutorial', 'customization', 'configuration', 'writing', 'markdown'].includes(tag))
+);
+
+// Sort by date, newest first
+const sortedTutorials = tutorialPosts.sort((a, b) =>
+  b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<BaseLayout title={`Tips & Tutorials - ${siteConfig.name}`} description="Guides and tutorials for using the Neon Koi blog template">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-bold text-[var(--color-glitch-purple)] mb-4">Tips & Tutorials</h1>
+    <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-12">
+      Learn how to customize, configure, and create content with Neon Koi.
+    </p>
+
+    <div class="space-y-8">
+      {sortedTutorials.map((post) => (
+        <a
+          href={`/blog/${post.slug}/`}
+          class="group block p-6 bg-[var(--color-surface-light)] dark:bg-[var(--color-surface-dark)] rounded-lg border border-neutral-200 dark:border-neutral-800 transition-all duration-200 hover:border-[var(--color-glitch-purple)] hover:shadow-lg"
+        >
+          <div class="flex flex-col sm:flex-row gap-6">
+            <div class="sm:w-48 flex-shrink-0">
+              <img
+                src={post.data.thumbnail}
+                alt={post.data.title}
+                class="w-full h-32 sm:h-24 object-cover rounded-lg"
+              />
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[var(--color-glitch-pink)] transition-colors mb-2">
+                {post.data.title}
+              </h2>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-3 line-clamp-2">
+                {post.data.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag) => (
+                  <span class="px-3 py-1 text-sm bg-[var(--color-glitch-purple)]/10 text-[var(--color-glitch-purple)] rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {sortedTutorials.length === 0 && (
+      <p class="text-center text-neutral-500 dark:text-neutral-400 py-12">
+        No tutorials found. Check back soon!
+      </p>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<BaseLayout title={`About - ${siteConfig.name}`} description="Learn about Neon Koi, a modern blog template built with Astro">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-bold text-[var(--color-glitch-purple)] mb-8">About Neon Koi</h1>
+
+    <div class="prose">
+      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+        Neon Koi is a modern, fast, and beautiful blog template built with Astro 5.x.
+        Designed for developers, writers, and creators who value performance and clean design.
+      </p>
+
+      <h2 class="text-2xl font-bold text-[var(--color-glitch-purple)] mt-8 mb-4">Why Neon Koi?</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+        The name "Neon Koi" combines the vibrant, eye-catching nature of neon lights with
+        the grace and tranquility of koi fish. It represents the balance between striking
+        visual design and smooth, peaceful user experience.
+      </p>
+
+      <h2 class="text-2xl font-bold text-[var(--color-glitch-purple)] mt-8 mb-4">Key Features</h2>
+      <ul class="space-y-2 text-neutral-600 dark:text-neutral-400">
+        <li>⚡ Built with Astro 5.x for blazing fast performance</li>
+        <li>🎨 Tailwind CSS v4 with custom theming</li>
+        <li>🌙 Dark mode support with system preference detection</li>
+        <li>📝 Type-safe content collections</li>
+        <li>🔍 SEO optimized with meta tags and Open Graph</li>
+        <li>📱 Fully responsive design</li>
+        <li>🏷️ Tag-based categorization</li>
+        <li>📰 Auto-generated RSS feeds</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-[var(--color-glitch-purple)] mt-8 mb-4">Built For</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+        Whether you're starting a personal blog, a company publication, or a documentation
+        site, Neon Koi provides everything you need to get started quickly.
+      </p>
+
+      <h2 class="text-2xl font-bold text-[var(--color-glitch-purple)] mt-8 mb-4">Get Started</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+        Check out our <a href="/tutorials">Tips & Tutorials</a> section for guides on
+        customizing your site and creating great content.
+      </p>
+
+      <div class="mt-12 p-6 bg-[var(--color-surface-light)] dark:bg-[var(--color-surface-dark)] rounded-lg border border-neutral-200 dark:border-neutral-800">
+        <h3 class="text-xl font-bold text-[var(--color-glitch-purple)] mb-2">Questions or Feedback?</h3>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          We'd love to hear from you. Reach out via our social channels or check the
+          <a href="/updates">Updates</a> page for the latest changes.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

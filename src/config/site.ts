@@ -97,12 +97,8 @@ export const siteConfig: SiteConfig = {
   // Navigation
   navigation: {
     main: [
-      { label: 'Updates', href: '/category/updates' },
-      { label: 'Tips & Tutorials', href: '/category/tutorials' },
-      { label: 'Apps We Love', href: '/category/apps' },
-      { label: 'Creator Interviews', href: '/category/interviews' },
-      { label: 'Industry News', href: '/category/news' },
-      { label: 'Internet Culture', href: '/category/culture' },
+      { label: 'Updates', href: '/updates' },
+      { label: 'Tips & Tutorials', href: '/tutorials' },
     ],
     footer: [
       { label: 'Search', href: '/search' },

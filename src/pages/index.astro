@@ -14,7 +14,7 @@ const recentPosts = sortedPosts.filter(post => post !== featuredPost).slice(0, 6
 <BaseLayout title={`${siteConfig.name} - ${siteConfig.tagline}`}>
   <!-- Hero Section with Featured Post -->
   {featuredPost && (
-    <section class="mb-12 px-4 sm:px-6 lg:px-8">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
       <FeaturedPost post={featuredPost} />
     </section>
   )}

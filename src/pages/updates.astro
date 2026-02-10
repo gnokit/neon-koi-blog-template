@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const gitLog = [
+  { hash: '59b8d3b', date: '2025-02-10', message: 'Replace sample blogs with template documentation and improve code block styling' },
+  { hash: '18b758f', date: '2025-02-10', message: 'Update documentation for TypeScript configuration improvements' },
+  { hash: '1bf81da', date: '2025-02-10', message: 'Improve template customization with TypeScript interfaces and config options' },
+  { hash: 'c1e6fe5', date: '2025-02-10', message: 'Implement Phase 3 content collections and polish blog styles' },
+  { hash: '0e0e46d', date: '2025-02-10', message: 'Update Koi blog styles to match Glitch Blog design' },
+  { hash: '39698a9', date: '2025-02-10', message: 'Fix light theme background color' },
+  { hash: 'd11eabf', date: '2025-02-10', message: 'Fix theme switching functionality' },
+  { hash: '1723f65', date: '2025-02-09', message: 'Implement Phase 2: Core Components' },
+  { hash: 'ce30f83', date: '2025-02-09', message: 'Initial project setup for Koi blog' },
+  { hash: '8ae6fac', date: '2025-02-08', message: 'Initial commit from Astro' },
+];
+---
+
+<BaseLayout title={`Updates - ${siteConfig.name}`} description="Latest updates and changes to the Neon Koi blog template">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-bold text-[var(--color-glitch-purple)] mb-4">Updates</h1>
+    <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-12">
+      Track the latest changes and improvements to the Neon Koi template.
+    </p>
+
+    <div class="space-y-6">
+      {gitLog.map((commit, index) => (
+        <div class="flex gap-4 p-6 bg-[var(--color-surface-light)] dark:bg-[var(--color-surface-dark)] rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-glitch-purple)] flex items-center justify-center text-white font-mono text-xs font-bold">
+              {commit.hash.slice(0, 7)}
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-1">
+              {commit.message}
+            </p>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">
+              {commit.date}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
