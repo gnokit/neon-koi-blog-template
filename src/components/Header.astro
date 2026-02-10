@@ -38,7 +38,7 @@ const headerAction = siteConfig.headerAction;
         </a>
 
         <!-- Navigation -->
-        <nav class="hidden lg:flex items-center gap-6">
+        <nav class="hidden md:flex flex-wrap items-center gap-4 lg:gap-6 max-w-50 sm:max-w-75 lg:max-w-none">
           {navItems.map(item => (
             <a
               href={item.href}
@@ -64,14 +64,15 @@ const headerAction = siteConfig.headerAction;
             {headerAction.label}
           </a>
         )}
-        <button
+        <a
+          href="/search"
           class="p-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           aria-label="Search"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   </div>

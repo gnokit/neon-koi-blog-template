@@ -1,6 +1,6 @@
-# Koi Blog
+# Neon Koi
 
-A blog site celebrating the makers, creators, and coders who shine. Built with Astro and Tailwind CSS.
+A blog template built with Astro and Tailwind CSS. Features a clean, modern design with light/dark theme support, content collections for type-safe blog posts, and a configurable site setup.
 
 ## Features
 

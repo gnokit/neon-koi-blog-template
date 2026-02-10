@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Koi is a blog site built with Astro 5.x, featuring a clean, modern design with light/dark theme support. The site uses content collections for type-safe blog posts and Tailwind CSS v4 for styling.
+Neon Koi is a blog template built with Astro 5.x, featuring a clean, modern design with light/dark theme support. The site uses content collections for type-safe blog posts and Tailwind CSS v4 for styling.
 
 ## Development Commands
 
