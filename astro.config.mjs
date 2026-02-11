@@ -5,9 +5,11 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
+const baseUrl = process.env.BASE_URL || '';
+
 export default defineConfig({
   site: 'https://gnokit.github.io',
-  base: '/neon-koi-blog-template',
+  base: baseUrl,
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()]

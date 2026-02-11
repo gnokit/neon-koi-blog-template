@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:github": "BASE_URL=/neon-koi-blog-template astro build",
     "preview": "astro preview",
+    "preview:github": "BASE_URL=/neon-koi-blog-template astro preview",
     "astro": "astro",
-    "deploy": "astro build && gh-pages -d dist",
+    "deploy": "npm run build:github && gh-pages -d dist",
     "to-webp": "node scripts/convert-to-webp.js"
   },
   "dependencies": {
