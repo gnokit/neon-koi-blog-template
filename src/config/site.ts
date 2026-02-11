@@ -74,13 +74,12 @@ export const siteConfig: SiteConfig = {
   url: 'https://gnokit.github.io/neon-koi-blog-template',
 
   // Author/Publisher
-  author: 'Neon Koi Team',
+  author: 'Paul Chan',
 
   // Social Links
   social: {
-    twitter: 'https://twitter.com/neonkoi',
-    mastodon: 'https://mastodon.social/@neonkoi',
-    github: 'https://github.com/neonkoi',
+    twitter: 'https://x.com/gnokit',
+    github: 'https://github.com/gnokit/neon-koi-blog-template/',
   },
 
   // Show social links in footer navigation
