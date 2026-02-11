@@ -16,22 +16,15 @@ const footerLinks = siteConfig.navigation.footer.map(link => ({
 if (siteConfig.showSocialInFooter) {
   if (siteConfig.social.twitter) {
     footerLinks.push({
-      label: `${siteConfig.name} on Twitter`,
+      label: `X.com`,
       href: siteConfig.social.twitter,
-      external: true,
-    });
-  }
-  if (siteConfig.social.mastodon) {
-    footerLinks.push({
-      label: `${siteConfig.name} on Mastodon`,
-      href: siteConfig.social.mastodon,
       external: true,
     });
   }
   // Add GitHub if present
   if (siteConfig.social.github) {
     footerLinks.push({
-      label: `${siteConfig.name} on GitHub`,
+      label: `GitHub`,
       href: siteConfig.social.github,
       external: true,
     });
