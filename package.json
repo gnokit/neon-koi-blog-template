@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "preview:github": "BASE_URL=/neon-koi-blog-template astro preview",
     "astro": "astro",
-    "deploy": "npm run build:github && gh-pages -d dist",
+    "deploy": "npm run build:github && gh-pages -d dist --dotfiles",
     "to-webp": "node scripts/convert-to-webp.js"
   },
   "dependencies": {
