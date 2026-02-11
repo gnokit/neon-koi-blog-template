@@ -33,6 +33,15 @@ npm run preview
 
 # Convert PNG images to WebP for faster loading
 npm run to-webp
+
+# Build for GitHub Pages (with base URL)
+npm run build:github
+
+# Preview GitHub Pages build locally
+npm run preview:github
+
+# Deploy to GitHub Pages (builds and pushes to gh-pages branch)
+npm run deploy
 ```
 
 ## Project Structure
@@ -48,6 +57,40 @@ src/
 ├── styles/          # Global styles
 └── utils/           # Helper functions
 ```
+
+## Deployment
+
+This template is configured for manual deployment to GitHub Pages using the `gh-pages` branch approach.
+
+### Setup
+
+1. Update your repository Settings > Pages:
+   - Change **Source** to "Deploy from a branch"
+   - Select **Branch**: `gh-pages` and **Folder**: `/ (root)`
+
+2. Install the `gh-pages` package (already included):
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+### Deploy
+
+```bash
+# Build and deploy to GitHub Pages
+npm run deploy
+```
+
+This builds the site with the correct base URL (`/neon-koi-blog-template/`) and pushes the `dist/` folder to the `gh-pages` branch.
+
+### Development Commands
+
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Local development at `localhost:4321` |
+| `npm run build` | Build for local preview (no base URL) |
+| `npm run build:github` | Build for GitHub Pages subdirectory |
+| `npm run preview:github` | Preview GitHub Pages build locally |
+| `npm run deploy` | Build and deploy to GitHub Pages |
 
 ## Content
 
